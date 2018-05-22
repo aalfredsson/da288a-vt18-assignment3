@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Products extends Migration
+class AddBrandimagedescriptionToTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class Products extends Migration
     public function up()
     {
         //
-        Schema::create('products', function (Blueprint $table){
-            $table->increments('id');
-            $table->text('title');
-            $table->float('price');
-            $table->timestamps();
+        Schema::table('products', function ($table){
+            $table->text('brand');
+            $table->text('image');
+            $table->text('description');
         });
     }
 

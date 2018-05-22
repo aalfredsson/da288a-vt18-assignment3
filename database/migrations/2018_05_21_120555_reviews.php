@@ -14,6 +14,14 @@ class Reviews extends Migration
     public function up()
     {
         //
+        Schema::create('reviews', function (Blueprint $table){
+            $table->increments('id');
+            $table->text('name');
+            $table->text('comment');
+            $table->integer('grade');
+            $table->integer('product_id');
+            $table->timestamps();
+        });
     }
 
     /**

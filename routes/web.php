@@ -15,6 +15,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/products', function () {
-    return 'Soon, we will list the products here!';
-});
+
+
+$router->get('products', 'ProductsController@index');
+$router->get('products/{id}', 'ProductsController@show');
+$router->get('stores', 'ProductsController@show');
+$router->get('reviews', 'ProductsController@show');
+$router->post('products', 'ProductsController@show');
