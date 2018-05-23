@@ -8,25 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-  /*
-  public function index(){
-    $movies = DB::table('movies')->get();
-    return response()->json($movies);
-  }
-  public function show($id){
-    $movie = DB::table('movies')->find($id);
-    return response()->json($movie);
-  }
-  */
-
-
-
-  public $products;
- /*
-  public function __construct() {
-    $this->products = json_decode(file_get_contents("../resources/products"));
-  }
-  */
+  
   public function index(){
     
     $products = Product::all();
@@ -34,10 +16,17 @@ class ProductsController extends Controller
   }
   public function show($id){
     $product = Product::find($id);
-    
-    $product->review = $product->review;
+    foreach ($product->reviews as $review)
+    {
+       $product->reviews = $review;
+    }
+
     $product->stores = $product->stores;
 
     return response()->json($product);
+  }
+
+  public function create(){
+    return "hej";
   }
 }
