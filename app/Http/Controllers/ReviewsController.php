@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\DB;
 class ReviewsController extends Controller
 {
 
-  public function index(){
-    
-    $reviews = Review::all();
-    return response()->json($reviews);
-  }
+    public function index(){
+      
+        $reviews = Review::all();
+        return response()->json($reviews);
+    }
 
 }

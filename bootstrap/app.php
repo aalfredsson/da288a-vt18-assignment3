@@ -58,7 +58,9 @@ $app->singleton(
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-
+$app->middleware([
+    palanik\lumen\Middleware\LumenCors::class
+]);
 // $app->middleware([
 //    App\Http\Middleware\ExampleMiddleware::class
 // ]);
