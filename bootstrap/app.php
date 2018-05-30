@@ -23,9 +23,9 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +58,9 @@ $app->singleton(
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-
+$app->middleware([
+    palanik\lumen\Middleware\LumenCors::class
+]);
 // $app->middleware([
 //    App\Http\Middleware\ExampleMiddleware::class
 // ]);

@@ -14,6 +14,12 @@ class Stores extends Migration
     public function up()
     {
         //
+        Schema::create('stores', function (Blueprint $table){
+            $table->increments('id');
+            $table->text('name');
+            $table->text('city');
+            $table->timestamps();
+        });
     }
 
     /**
